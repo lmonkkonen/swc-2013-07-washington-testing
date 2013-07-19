@@ -12,6 +12,11 @@ def mean(numlist):
     (`float`) - Mean of the values in numlist
     
     """
+    try: 
+        for item in numlist:
+            assert not isinstance(item, str)
+    except: 
+	print "List must contain numbers"
     try :
         total = sum(numlist)
         length = len(numlist)
@@ -19,4 +24,7 @@ def mean(numlist):
         raise TypeError("The list was not numbers.")
     except :
         print "Something unknown happened with the list."
-    return total/length
+    return float(total)/length
+def test_try():
+    assert False
+    assert_equal(1,2)
